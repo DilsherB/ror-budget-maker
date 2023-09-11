@@ -5,10 +5,10 @@ class Transaction < ApplicationRecord
   validates :name, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
 
-  after_create  :self.total_amt_for_category,
-                :self.total_amt_for_user,
-                :self.total_amt_for_category_and_user,
-                :self.total_amt_for_transaction_and_user
+  after_create :self.total_amt_for_category,
+               :self.total_amt_for_user,
+               :self.total_amt_for_category_and_user,
+               :self.total_amt_for_transaction_and_user
 
   def self.total_amt_for_category
     where(category_id:).sum(:amount)
