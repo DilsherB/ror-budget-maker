@@ -13,3 +13,4 @@ class User < ApplicationRecord
   def self.total_amt_for_user
     where(user_id:).sum(:amount)
   end
+end
