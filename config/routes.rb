@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  # devise_for :users
   resources :categories
   resources :users do
     resources :transactions

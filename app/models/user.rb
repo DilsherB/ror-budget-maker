@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+  
   has_many :transactions, dependent: :nullify
 
   validates :name, presence: true
@@ -8,7 +11,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
   validates :confirm_password, presence: true, confirmation: true
 
-  after_create :self.total_amt_for_user
+  # after_create :self.total_amt_for_user
 
   def self.total_amt_for_user
     where(user_id:).sum(:amount)
