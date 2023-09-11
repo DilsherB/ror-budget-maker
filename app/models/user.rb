@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
+  devise  :database_authenticatable, :registerable,
+          :recoverable, :rememberable, :validatable, :confirmable
   has_many :transactions, dependent: :nullify
 
   validates :name, presence: true
@@ -12,10 +13,3 @@ class User < ApplicationRecord
   def self.total_amt_for_user
     where(user_id:).sum(:amount)
   end
-=======
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
->>>>>>> c3ed87389835b5751e292f8eaca8fcd54ebd5a69
-end
