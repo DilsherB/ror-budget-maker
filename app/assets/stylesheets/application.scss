@@ -1,0 +1,238 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+
+:root {
+  --color-primary: #3878c2;
+  --color-secondary: #60b524;
+  --color-text: #434c55;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Proxima Nova", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f7f7f7;
+  padding: 0 5px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+}
+
+.logo-container {
+  text-align: center;
+  //   padding: 60% 0;
+}
+
+.large-button {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.add-cat-btn,
+.add-trans-btn,
+.save-btn {
+  background-color: var(--color-secondary);
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 15px;
+  display: block;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-secondary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.login-btn,
+.signup-btn,
+.submit-btn {
+  width: 500px;
+  background-color: lightgray;
+  padding: 15px 100px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  width: 500px;
+  color: white;
+  background-color: var(--color-primary);
+  padding: 15px 100px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+/* Media query for screens lower than 500px */
+@media (max-width: 500px) {
+  .login-btn,
+  .signup-btn,
+  .add-cat-btn,
+  .add-trans-btn,
+  .save-btn,
+  .login-btn:hover,
+  .signup-btn:hover,
+  .add-cat-btn:hover,
+  .add-trans-btn:hover,
+  .save-btn:hover {
+    width: 100%;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  width: 100%;
+  padding: 10px;
+  color: white;
+}
+
+nav a {
+  color: white;
+}
+
+.nav-login,
+.nav-logout,
+.reg-submit {
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.logout-icon {
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input,
+input:focus {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #f7f7f7;
+}
+
+.forgot,
+.shared-links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.reg-inputs,
+.login-inputs,
+.container {
+  margin-top: 100px;
+}
+
+.category-item {
+  width: 100%;
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border: 1px solid #fff;
+  font-size: 1rem;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.category-item-row {
+  display: grid;
+  grid-template-columns: 3fr 5fr 3fr;
+  gap: 10px;
+}
+
+.img-container {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.name-date-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.amount-col {
+  text-align: right;
+}
+
+.expense-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+hr {
+  border-top: 1px solid lightgray;
+}
