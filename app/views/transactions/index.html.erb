@@ -1,0 +1,60 @@
+<nav>
+<div class="signout-wrapper>
+   <%= link_to "/categories" do %>
+    <i class="material-icons md-36">arrow_back</i>
+  <% end %>
+  <% if user_signed_in? %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"logout-btn" %>
+  <% end %>
+</div>
+  
+  <h2>TRANSACTIONS</h2>
+  <i class="material-icons md-36">search</i>
+</nav>
+
+<div class="container">
+  <%= render 'shared/notification_box' %>
+
+  <div>
+    <div class='category-item category-item-row'>
+      <div class="img-container">
+        <%= image_tag(@category.icon_url) if @category.icon %>
+      </div>
+
+      <div class="name-date-col">
+        <h3><%= @category.name %></h3>
+        <p><%= @category.format_date(@category.created_at) %></p>
+      </div>
+    </div>
+
+    <h3>
+      <h3>Total: $<%= number_with_delimiter(@expenses_sum, delimiter: ',') + "0" %></h3>
+    </h3>
+  </div>
+
+  <div class='item'>
+    <% if @expenses.empty? %>
+      <p>No items available.</p>
+    <% else %>
+      <% @expenses.each_with_index do |t, i| %>
+        <hr>
+        <div class="expense-container">
+          <div>
+            <h3><%= t.name %><br>
+            <small><%= t.format_date(t.created_at) %></small></h3>
+          </div>
+
+          <div class="amount-col">
+            <h4>Amount<br>
+            <small><%= "$" + number_with_delimiter(t.amount, delimiter: ',') + "0" %></small></h4>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="footer">
+    <%= link_to "ADD TRANSACTION", new_category_expense_path(@category), class: "add-trans-btn", role: "button" %>
+  </div>
+</div>
+

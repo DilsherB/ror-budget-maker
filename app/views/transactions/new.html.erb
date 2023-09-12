@@ -1,0 +1,33 @@
+<nav>
+  <div class="signout-wrapper"> 
+  <%= link_to category_expenses_path(@category.id) do %>
+    <i class="material-icons md-36">arrow_back</i>
+  <% end %>
+    <% if user_signed_in? %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"logout-btn" %>
+  <% end %>
+  </div>
+  <h2>ADD TRANSACTION</h2>
+  <i class="material-icons md-36">search</i>
+</nav>
+
+<div class="container">
+  <%= render 'shared/notification_box' %>
+
+  <%= form_with model: @new_expense, url: category_expenses_path do |f| %>
+    <div>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control', required: true, placeholder: "Transaction Name" %>
+    </div>
+
+     <%# Current user field %>
+        <%= f.hidden_field :author_id, value: current_user.id %>
+
+    <div>
+      <%= f.number_field :amount, autocomplete: "amount", class: 'form-control', required: true, step: "0.01", placeholder: "Amount" %>
+    </div>
+
+    <div class="footer">
+      <%= f.submit "SAVE", class: 'save-btn' %>
+    </div>
+  <% end %>
+</div>
