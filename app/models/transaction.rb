@@ -1,29 +1,14 @@
-class Transaction < ApplicationRecord
-  belongs_to :user, class_name: 'User', foreign_key: 'user_id'
-  belongs_to :category, class_name: 'Category', foreign_key: 'category_id'
+class Expense < ApplicationRecord
+  # Validations
+  validates :name, presence: true, length: { minimum: 3 }
+  validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
-  validates :name, presence: true
-  validates :amount, presence: true, numericality: { greater_than: 0 }
+  # Associations
+  belongs_to :author, class_name: 'User'
+  has_many :category_expenses, dependent: :destroy
+  has_many :categories, through: :category_expenses, dependent: :destroy
 
-  # after_create :self.total_amt_for_category,
-  #              :self.total_amt_for_user,
-  #              :self.total_amt_for_category_and_user,
-  #              :self.total_amt_for_transaction_and_user
-
-  def total_amt_for_category
-    category.transactions.sum(:amount)
+  def format_date(time_with_zone)
+    time_with_zone.strftime('%d %b %Y')
   end
-
-  def total_amt_for_user
-    user.transactions.sum(:amount)
-  end
-
-  def total_amt_for_category_and_user
-    category.transactions.where(user_id: user_id).sum(:amount)
-  end
-
-  def total_amt_for_transaction_and_user
-    user.transactions.where(id: id).sum(:amount)
-  end
-              
 end
