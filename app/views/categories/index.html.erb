@@ -1,0 +1,43 @@
+<nav>
+  <div class="signout-wrapper">
+  <i class="material-icons md-36">menu</i>
+    <% if user_signed_in? %>
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"logout-btn" %>
+  <% end %>
+  </div>
+  <h2>CATEGORIES</h2>
+  <i class="material-icons md-36">search</i>
+</nav>
+
+<div class="container">
+  <%= render 'shared/notification_box' %>
+
+  <div>
+    <% if @categs.empty? %>
+      <p></p>
+    <% else %>
+      <% @categs.each_with_index do |categ, i| %>
+        <div class='category-item'>
+          <a href="/categories/<%= categ.id %>/expenses" class="category-item-row">
+            <div class="img-container">
+              <%= image_tag(categ.icon_url) if categ.icon %>
+            </div>
+
+            <div class="name-date-col">
+              <h3><%= categ.name %></h3>
+              <p><%= categ.format_date(categ.created_at) %></p>
+            </div>
+
+            <div class="amount-col">
+              <h3><small><%= "$" + number_with_delimiter(categ.expenses.sum(:amount), delimiter: ',') + "0" %></small></h3>
+            </div>
+          </a>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="footer">
+      <%= link_to "ADD CATEGORY", new_category_path, class: "add-cat-btn", role: "button" %>
+    </div>
+  </div>
+</div>
