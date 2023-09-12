@@ -1,0 +1,17 @@
+<h1>All users</h1>
+<%= render "layouts/header"%>
+<ul class="users">
+  <% @users.includes(:transactions).each do |user| %>
+    <li class="flex">
+      <div class="borderb">
+        <img src=<%= user.name %> alt="User profile photo" width=100 height=90>
+      </div>
+      <div class="borderb flex height110">
+        <p class="size"><%= link_to user.name, "users/#{user.id}" %></p>
+        <p>Total Amount: <%= user.self.total_amt_for_user%></p>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<%= render "layouts/footer" %>
