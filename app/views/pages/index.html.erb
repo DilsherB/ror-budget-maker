@@ -1,0 +1,11 @@
+<section class="home-container">
+
+  <div class="logo-container">
+    <%= image_tag "logo.png", alt: "App Logo", style: "width: 150px;" %>
+  </div>
+
+  <div class="large-button">
+    <%= link_to "LOG IN", new_user_session_path, class: "login-btn", role: "button" %>
+    <%= link_to "SIGN UP", new_user_registration_path, class: "signup-btn", role: "button" %>
+  </div>
+</section>
