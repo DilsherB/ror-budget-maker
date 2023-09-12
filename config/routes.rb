@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  # devise_for :users
-  resources :categories
-  resources :users do
-    resources :transactions
-  end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  root "users#index"
+  resources :categories, only: [:index, :new, :create] do
+    resources :expenses, only: [:new, :create, :index]
+  end
+
+  root "pages#index"
 end
