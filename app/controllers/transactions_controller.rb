@@ -1,50 +1,38 @@
-class TransactionsController < ApplicationController
-  def index
-    @transactions = Transaction.all
-  end
+class ExpensesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_category, only: %i[index create new]
 
-  def show
-    @transaction = Transaction.find(params[:id])
+  def index
+    @category = Category.find(params[:category_id])
+    @expenses = @category.expenses.order(created_at: :desc)
+    @expenses_sum = @expenses.sum(:amount)
   end
 
   def new
-    @transaction = Transaction.new
+    @new_expense = Expense.new
+    @categories = Category.all
   end
 
   def create
-    @transaction = Transaction.new(transaction_params)
+    @expense = Expense.new(author_id: current_user.id, **expense_params)
 
-    if @transaction.save
-      redirect_to @transaction, notice: 'Transaction was created successfully.'
+    if @expense.save
+      CategoryExpense.create!(category_id: @category.id, expense_id: @expense.id, author_id: @expense.author_id)
+      flash[:notice] = 'Transaction recorded successfully'
+      redirect_to category_expenses_path(@category)
     else
-      render :new
+      flash.now[:alert] = 'Transaction could not be saved'
+      render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @transaction = Transaction.find(params[:id])
-  end
-
-  def update
-    @transaction = Transaction.find(params[:id])
-
-    if @transaction.update(transaction_params)
-      redirect_to @transaction, notice: 'Transaction was updated successfully.'
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @transaction = Transaction.find(params[:id])
-    @transaction.destroy
-
-    redirect_to transactions_path, notice: 'Transaction was deleted successfully.'
   end
 
   private
 
-  def transaction_params
-    params.require(:transaction).permit(:name, :amount, :category_id)
+  def expense_params
+    params.require(:expense).permit(:name, :amount, :author_id)
+  end
+
+  def set_category
+    @category = Category.find(params[:category_id])
   end
 end
