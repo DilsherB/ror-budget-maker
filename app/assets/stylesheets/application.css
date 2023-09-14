@@ -23,17 +23,6 @@
   border-radius: 5px;
 }
 
-/* .custom-dropdown .options {
-  display: none;
-  position: absolute;
-  border: 1px solid #ccc;
-  background: #fff;
-} */
-
-.custom-dropdown:hover .options {
-  display: block;
-}
-
 .d-none {
   display: none;
 }
