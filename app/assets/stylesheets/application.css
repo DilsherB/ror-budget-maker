@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+.phone-border {
+  margin: 10px auto;
+  width: 375px;
+  height: max-content;
+  border: 10px solid rgb(84, 215, 84);
+  box-shadow: 0 0 30px gray;
+  border-radius: 5px;
+}
+
+/* .custom-dropdown .options {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #fff;
+} */
+
+.custom-dropdown:hover .options {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.icon-selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-header {
+  margin-bottom: 10px; /* Espacio entre el texto y los íconos */
+}
+
+.icon-label {
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: inline-block;
+  margin: 5px;
+}
+
+.icon-label:hover {
+  border: 2px solid blue;
+}
+
+input[type="radio"]:checked + .icon-label {
+  border: 2px solid green;
+}
