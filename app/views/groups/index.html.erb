@@ -7,7 +7,9 @@
       <% end %>
       <span>CATEGORIES</span>
       <%= link_to 'New', new_group_path, class: "text-white", style: "margin-right: 5px; text-decoration: none; color: inherit;" %>
-
+      <% if user_signed_in? %>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+      <% end %>
     </div>
 
      <div class="w-100" style="flex-grow: 1; max-width: 100%!important;">

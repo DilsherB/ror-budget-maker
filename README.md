@@ -14,6 +14,8 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+    - [🚀 Live Demo](#live-demo)
+    - [🔭 Video Presentation](#video)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -70,6 +72,12 @@ The Ruby on Rails capstone project(ROR-Budget-maker) is a mobile web application
 - Integration specs for Views.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### 🚀 Live Demo <a name="live-demo"></a>
+
+### 🔭 Video Presentation <a name="video"></a>
+
+Please click <a href="https://youtu.be/GuNyhHLVo-c" target="_blank">here</a> to watch video presentation of the project
 
 <!-- GETTING STARTED -->
 
