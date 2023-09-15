@@ -143,7 +143,8 @@ rspec
 
 <!-- CONTRIBUTING -->
 
-:handshake: Contributing <a name="contributing"></a>
+## 🤝 Contributing <a name="contributing"></a>
+
 Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](../../issues/).
 
@@ -151,7 +152,8 @@ Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
-:star:️ Show your support <a name="support"></a>
+## ⭐️ Show your support <a name="show-your-support"></a>
+
 If you like this project give a :star:️. ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -161,6 +163,7 @@ If you like this project give a :star:️. ⭐️
 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - I would like to thank [Microverse Inc](https://www.github.com/microverseinc) for providing the project requirements and materials.
+- I would like to thank `Gregoire Vella` also as he is the author of the original design
 
 ❓ FAQ <a name="faq"></a>
 
