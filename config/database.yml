@@ -23,13 +23,17 @@ default: &default
 
 development:
   <<: *default
-  database: ror_budget_maker_development
+  database: ror_budget_app_development
+  username: dilsh
+  password: dilsher
+  host: localhost
+  port: 5432
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: ror_budget_maker
+  #username: ror_budget_app
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +61,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ror_budget_maker_test
+  database: ror_budget_app_test
+  username: dilsh
+  password: dilsher
+  host: localhost
+  port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +89,4 @@ test:
 #
 production:
   <<: *default
-  database: ror_budget_maker_production
-  username: ror_budget_maker
-  password: <%= ENV["ROR_BUDGET_MAKER_DATABASE_PASSWORD"] %>
+  durl: <%= ENV['DATABASE_URL'] %>
