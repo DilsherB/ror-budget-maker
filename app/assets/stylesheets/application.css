@@ -18,8 +18,7 @@
   margin: 10px auto;
   width: 375px;
   height: max-content;
-  /* border: 16px solid #000; */
-  border-width: 60px 16px solid #000;
+  border: 60px solid #000;
   box-shadow: 0 0 30px gray;
   border-radius: 25px;
 }
