@@ -10,7 +10,8 @@ gem 'rails', '~> 7.0.8'
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+# gem 'pg', '~> 1.1'
+gem 'pg', group: :production
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -77,5 +78,5 @@ group :test do
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
-
 gem 'devise'
+gem 'rails_12factor', group: :production
