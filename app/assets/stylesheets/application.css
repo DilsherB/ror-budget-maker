@@ -18,9 +18,10 @@
   margin: 10px auto;
   width: 375px;
   height: max-content;
-  border: 10px solid rgb(84, 215, 84);
+  border: 16px solid #000;
+  border-width: 60px 0;
   box-shadow: 0 0 30px gray;
-  border-radius: 5px;
+  border-radius: 25px;
 }
 
 .d-none {

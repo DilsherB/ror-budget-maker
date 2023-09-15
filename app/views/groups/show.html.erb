@@ -5,11 +5,11 @@
       <%= link_to groups_path, class: "text-white ml-3" do %>
         <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
       <% end %>
+      <span>TRANSACTIONS</span>
+      <%= link_to 'New', new_group_entity_path(@group), class: "text-white", style: "margin-right: 5px; text-decoration: none; color: inherit;" %>
       <% if user_signed_in? %>
         <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
       <% end %>
-      <span>TRANSACTIONS</span>
-      <%= link_to 'New', new_group_entity_path(@group), class: "text-white", style: "margin-right: 5px; text-decoration: none; color: inherit;" %>
     </div>
 
     <div class="w-100 d-flex my-2 shadow bg-white">
