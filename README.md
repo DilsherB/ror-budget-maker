@@ -75,6 +75,8 @@ The Ruby on Rails capstone project(ROR-Budget-maker) is a mobile web application
 
 ### 🚀 Live Demo <a name="live-demo"></a>
 
+Please click <a href="https://ror-budget-maker.onrender.com/" target="_blank">here</a> to go live with the application.
+
 ### 🔭 Video Presentation <a name="video"></a>
 
 Please click <a href="https://youtu.be/GuNyhHLVo-c" target="_blank">here</a> to watch video presentation of the project
