@@ -1,8 +1,8 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="./media/dilsher-logo.png" alt="logo" width="140"  height="auto" />
-  <img src="./media/DSB.png" alt="logo" width="140"  height="auto" />
+  <img src="./app/assets/images/dilsher-logo.png" alt="logo" width="140"  height="auto" />
+  <img src="./app/assets/images/DSB.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h1><b>Ruby on Rails Blog App</b></h1>
 </div>
