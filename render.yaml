@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: ROR-RecipeCapstone
+    databaseName: ROR-RecipeCapstone
+    user: ROR-RecipeCapstone
 
 services:
   - type: web
-    name: mysite
+    name: ror-budget-maker
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: ROR-RecipeCapstone
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
