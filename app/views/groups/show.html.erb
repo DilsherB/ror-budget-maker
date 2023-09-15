@@ -4,9 +4,9 @@
    <div class="w-100 bg-primary text-white text-center d-flex justify-content-between align-items-center" style="height: 50px;">
       <%= link_to groups_path, class: "text-white ml-3" do %>
         <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
-        <% if user_signed_in? %>
-          <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-        <% end %>
+      <% end %>
+      <% if user_signed_in? %>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
       <% end %>
       <span>TRANSACTIONS</span>
       <%= link_to 'New', new_group_entity_path(@group), class: "text-white", style: "margin-right: 5px; text-decoration: none; color: inherit;" %>
