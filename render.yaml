@@ -1,7 +1,7 @@
 databases:
   - name: ROR-RecipeCapstone
-    databaseName: ROR-RecipeCapstone
-    user: ROR-RecipeCapstone
+    databaseName: ror_recipecapstone
+    user: ror_recipecapstone_user
 
 services:
   - type: web
