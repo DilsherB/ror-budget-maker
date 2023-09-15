@@ -15,10 +15,12 @@
  */
 
 .phone-border {
-  margin: 10px auto;
+  margin: auto;
   width: 375px;
-  height: max-content;
-  border: 60px 16px solid #000;
+  height: 667px;
+  border: 16px solid #000;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
   box-shadow: 0 0 30px gray;
   border-radius: 25px;
 }
