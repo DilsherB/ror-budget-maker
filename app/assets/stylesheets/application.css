@@ -19,8 +19,8 @@
   width: 375px;
   height: max-content;
   border: 16px solid #000;
-  border-width: 60px;
-  /* border-bottom-width: 60px; */
+  border-top-width: 60px;
+  border-bottom-width: 60px;
   box-shadow: 0 0 30px gray;
   border-radius: 25px;
 }
