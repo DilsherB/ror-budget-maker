@@ -6,10 +6,10 @@
           <i class="fas fa-arrow-left" style="margin-left: 5px;"></i>
         <% end %>
         <span>CATEGORY</span>
+        <%= form.submit "Save", class: "text-white mr-3 bg-transparent border-0", style: "cursor: pointer;" %>
         <% if user_signed_in? %>
           <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
         <% end %>
-        <%= form.submit "Save", class: "text-white mr-3 bg-transparent border-0", style: "cursor: pointer;" %>
       </div>
 
       <div class="w-100 mt-auto mb-auto" style="max-width: 100%!important;">
